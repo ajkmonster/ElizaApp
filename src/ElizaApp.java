@@ -3,13 +3,6 @@ import java.util.Scanner;
 
 public class ElizaApp {
     public static void main(String[] args) {
-       /*     String Str = new String("I really like this Java course");
-            System.out.println("Return Value :" );
-
-            for (String retval: Str.split(" ")) {
-                System.out.println(retval);
-            }*/
-        //above is the split function
         String input;
         String input2;
         Scanner key = new Scanner(System.in);
@@ -37,15 +30,8 @@ public class ElizaApp {
                 Scanner key3 = new Scanner(System.in);
                 input = key3.nextLine();
             }
-            while (!input.equals("Q"));
+            while (!input.equalsIgnoreCase("q"));
         }
     }
 }
-//Please tell me more
-//Many of my patients tell me the same thing
-//It is getting late, maybe we had better quit
-            //replace i with you
-            //replace me with you
-            //replace my with your
-            //replace am with are
 
