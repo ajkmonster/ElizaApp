@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -7,9 +8,11 @@ public class ElizaApp {
         Scanner key = new Scanner(System.in);
         System.out.print("Hello, my name is ELiza! Tell me whats wrong? Respond here or type Q to quit: ");
         input = key.nextLine();
-
-        String[] arr = {"Tell me more.", "Many of my patients tell me the same thing.", "Explain that a little.", "Why is that?"};
-
+        ArrayList<String> starter = new ArrayList<>();
+        starter.add("Tell me more.");
+        starter.add("Many of my patients tell me the same thing.");
+        starter.add("Explain that a little.");
+        starter.add("Why is that?");
         while (!input.equalsIgnoreCase("Q")) {
             do {
                 Random r = new Random();
@@ -19,7 +22,7 @@ public class ElizaApp {
                 System.out.println("Respond here or type Q to quit: ");
                 input = key2.nextLine();
                 if (!input.equalsIgnoreCase("Q")) {
-                    System.out.println(arr[x]);
+                    System.out.println(starter.get(x));
                     System.out.println("Respond here or type Q to quit: ");
                     Scanner key3 = new Scanner(System.in);
                     input = key3.nextLine();
@@ -28,18 +31,15 @@ public class ElizaApp {
         }
     }
     private static void ReplaceString(String input) {
-        String replace1;
-        String replace2;
-        String replace3;
-        String replace4;
-        replace1 = input.replaceAll("I", "you");
-        replace2 = replace1.replaceAll("me", "you");
-        replace3 = replace2.replaceAll("my", "your");
-        replace4 = replace3.replaceAll("am", "are");
-        String[] arr2 = {"Why do you say that ", "You seem to think that ", "So, you are concerned that "};
+        input = input.replaceAll("I", "you").replaceAll("me", "you").
+                replaceAll("my", "your").replaceAll("am", "are");
+        ArrayList<String> replacer = new ArrayList<> ();
+        replacer.add("Why do you say that ");
+        replacer.add("You seem to think that ");
+        replacer.add("So, you are concerned that ");
         Random r = new Random();
         int y = r.nextInt(2);
-        System.out.println(arr2[y] + replace4);
+        System.out.println(replacer.get(y) + input);
     }
 }
 

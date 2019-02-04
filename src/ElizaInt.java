@@ -24,10 +24,7 @@ public class ElizaInt {
         }
     }
         private static void ReplaceString(String input){
-            String replace1;
-            String replace2;
-            String replace3;
-            String replace4;
+            String replace1,replace2,replace3,replace4;
             replace1 = input.replaceAll("I", "you");
             replace2 = replace1.replaceAll("me", "you");
             replace3 = replace2.replaceAll("my", "your");
